@@ -1,0 +1,21 @@
+<section class="contact-wrap">
+  <div class="contact-card">
+    <p>Customer Care</p>
+    <h1>Contact VoltRide</h1>
+    <span>Phone: +91 00000 00000</span>
+    <span>Email: {{ contactEmail }}</span>  <span>Location: {{ locationLabel }}</span>
+    <a class="map-link" [href]="mapsLink" target="_blank" rel="noopener">Open Location In Google Maps</a>
+
+    <div class="map">
+      <iframe
+        [src]="mapEmbedUrl"
+        title="VoltRide Location"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+
+  <app-contact-form></app-contact-form>
+</section>
+

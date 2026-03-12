@@ -1,0 +1,77 @@
+<app-hero-section
+  title="Future. Electric. Everyday."
+  description="A high-performance electric scooter platform with flagship design, connected intelligence, and practical range."
+  heroImage="https://cdn.bikedekho.com/processedimages/tvs/iqube-electric/source/iqube-electric690f0c38d0665.jpg"
+  heroAlt="VoltRide hero scooter"
+></app-hero-section>
+
+<section class="stats-grid">
+  @for (item of stats; track item.label) {
+    <app-stat-counter [value]="item.value" [suffix]="item.suffix" [label]="item.label"></app-stat-counter>
+  }
+</section>
+
+<app-feature-cards [features]="features"></app-feature-cards>
+
+<section class="story-layout">
+  <div class="story-sticky" appScrollReveal>
+    <img src="https://cdn.bikedekho.com/processedimages/tvs/iqube-electric/source/iqube-electric68a806fdb536c.jpg" alt="VoltRide motion showcase" />
+    <div>
+      <p>Ride Experience</p>
+      <h2>Engineered To Feel Instant, Stable, And Smart</h2>
+    </div>
+  </div>
+
+  <div class="story-steps">
+    @for (step of storySteps; track step.title) {
+      <article appScrollReveal>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="campaign-wrap">
+  @for (panel of campaignPanels; track panel.title; let i = $index) {
+    <article class="campaign-card" appScrollReveal>
+      <div class="campaign-media">
+        <img [src]="panel.image" [alt]="panel.title" />
+        <div class="media-overlay">
+          <span class="index">0{{ i + 1 }}</span>
+          <span class="label">Feature Drop</span>
+        </div>
+      </div>
+
+      <div class="campaign-content">
+        <h2>{{ panel.title }}</h2>
+        <p>{{ panel.description }}</p>
+
+        <div class="campaign-meta">
+          <span>Fast Charge Ready</span>
+          <span>Connected Tech</span>
+          <span>Urban Performance</span>
+        </div>
+
+        <div class="campaign-actions">
+          <a routerLink="/technology" class="primary">Discover More</a>
+          <a routerLink="/dealers" class="secondary">Book Test Ride</a>
+        </div>
+      </div>
+    </article>
+  }
+</section>
+
+<section class="lineup-head">
+  <h2>Featured Scooters</h2>
+  <a routerLink="/scooters">View All Models</a>
+</section>
+
+<section class="preview-grid">
+  @for (scooter of scooters; track scooter.id) {
+    <app-scooter-card [scooter]="scooter"></app-scooter-card>
+  }
+</section>
+
+
+

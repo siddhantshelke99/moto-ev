@@ -1,0 +1,42 @@
+<form class="contact-form" [formGroup]="form" (ngSubmit)="submit()">
+  <label>
+    Full Name
+    <input type="text" formControlName="name" placeholder="Enter your name" />
+  </label>
+  @if (form.controls.name.touched && form.controls.name.invalid) {
+    <p class="field-error">Name is required.</p>
+  }
+
+  <label>
+    Email Address
+    <input type="email" formControlName="email" placeholder="you@example.com" />
+  </label>
+  @if (form.controls.email.touched && form.controls.email.invalid) {
+    <p class="field-error">Enter a valid email address.</p>
+  }
+
+  <label>
+    Phone (Optional)
+    <input type="text" formControlName="phone" placeholder="+91 00000 00000" />
+  </label>
+
+  <label>
+    Message
+    <textarea rows="4" formControlName="message" placeholder="Tell us how we can help."></textarea>
+  </label>
+  @if (form.controls.message.touched && form.controls.message.invalid) {
+    <p class="field-error">Message is required.</p>
+  }
+
+  @if (status() === 'success') {
+    <p class="status success">{{ statusMessage() }}</p>
+  }
+
+  @if (status() === 'error') {
+    <p class="status error">{{ statusMessage() }}</p>
+  }
+
+  <button type="submit" [disabled]="isSubmitting()">
+    {{ isSubmitting() ? 'Sending...' : 'Send Message' }}
+  </button>
+</form>

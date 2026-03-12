@@ -1,0 +1,9 @@
+<section class="feature-grid">
+  @for (feature of features; track feature.title) {
+    <article class="feature" appScrollReveal>
+      <span class="icon">{{ feature.icon }}</span>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </article>
+  }
+</section>

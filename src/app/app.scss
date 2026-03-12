@@ -1,0 +1,22 @@
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-content {
+  padding-top: clamp(5.1rem, 7vw, 5.8rem);
+  min-height: calc(100vh - clamp(5.1rem, 7vw, 5.8rem));
+  width: 100%;
+}
+
+.route-shell {
+  position: relative;
+  width: 100%;
+}
+
+.route-shell > * {
+  display: block;
+  width: 100%;
+}

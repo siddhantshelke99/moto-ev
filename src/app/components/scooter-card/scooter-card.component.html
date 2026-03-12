@@ -1,0 +1,18 @@
+<article class="scooter-card" appScrollReveal>
+  <div class="image">
+    <img [src]="scooter.imageUrl" [alt]="scooter.name" />
+    <div class="overlay">
+      <span>{{ scooter.tag || 'Premium EV' }}</span>
+    </div>
+  </div>
+
+  <h3>{{ scooter.name }}</h3>
+  <p>{{ scooter.description }}</p>
+
+  <div class="specs">
+    <span>{{ scooter.range || 'Range NA' }}</span>
+    <span>{{ scooter.topSpeed || 'Top Speed NA' }}</span>
+  </div>
+
+  <a [routerLink]="['/scooters', scooter.id]" class="view-btn">View Details</a>
+</article>

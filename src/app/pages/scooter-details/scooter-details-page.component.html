@@ -1,0 +1,22 @@
+<section class="details-wrap">
+  <div class="hero-image">
+    <img [src]="scooter.imageUrl" [alt]="scooter.name" />
+  </div>
+  <div class="copy">
+    <p class="muted">Flagship Electric Scooter</p>
+    <h1>{{ scooter.name }}</h1>
+    <p class="muted">{{ scooter.description }}</p>
+    <div class="actions">
+      <a routerLink="/dealers" class="book-btn">Book Test Ride</a>
+      <a routerLink="/scooters" class="ghost-btn">View All Scooters</a>
+    </div>
+  </div>
+</section>
+
+<section class="spec-grid">
+  @for (spec of scooter.specs; track spec.label) {
+    <app-specification-card [label]="spec.label" [value]="spec.value"></app-specification-card>
+  }
+</section>
+
+<app-feature-cards [features]="keyFeatures"></app-feature-cards>

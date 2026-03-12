@@ -1,0 +1,32 @@
+.page-wrap {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 1.2rem 1.2rem 1rem;
+}
+
+.tech-hero {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+}
+
+.tech-hero p {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+.tech-hero h1 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  max-width: 18ch;
+}
+
+.tech-hero span {
+  margin-top: 0.55rem;
+  display: block;
+  color: var(--text-soft);
+}

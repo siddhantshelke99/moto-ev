@@ -1,0 +1,11 @@
+<section class="dealer-list">
+  @for (dealer of dealers; track dealer.city) {
+    <article class="dealer-card" appScrollReveal>
+      <h4>{{ dealer.city }}</h4>
+      <p>{{ dealer.address }}</p>
+      <div class="map-box">
+        <img [src]="dealer.mapImage" [alt]="dealer.city + ' map preview'" />
+      </div>
+    </article>
+  }
+</section>

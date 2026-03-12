@@ -1,0 +1,71 @@
+<header class="navbar">
+  <div class="nav-wrap">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand-dot"></span>
+      <span>VoltRide EV</span>
+    </a>
+
+    <nav class="desktop-links">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <div class="actions desktop-actions">
+      <button
+        class="theme-switch"
+        type="button"
+        [class.on]="isDark"
+        (click)="themeToggle.emit()"
+        [attr.aria-pressed]="isDark"
+        [attr.aria-label]="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
+      >
+        <span class="track"><span class="thumb"></span></span>
+        <span class="label">{{ isDark ? 'Dark' : 'Light' }}</span>
+      </button>
+
+      <a routerLink="/dealers" class="ride-btn">Book Ride</a>
+    </div>
+
+    <button class="menu-btn" type="button" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-panel" [ngClass]="{ open: isMobileMenuOpen() }">
+    @for (link of links; track link.path) {
+      <a
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        (click)="closeMenu()"
+      >
+        {{ link.label }}
+      </a>
+    }
+
+    <div class="actions mobile-actions">
+      <button
+        class="theme-switch"
+        type="button"
+        [class.on]="isDark"
+        (click)="themeToggle.emit(); closeMenu()"
+        [attr.aria-pressed]="isDark"
+        [attr.aria-label]="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
+      >
+        <span class="track"><span class="thumb"></span></span>
+        <span class="label">{{ isDark ? 'Dark' : 'Light' }}</span>
+      </button>
+
+      <a routerLink="/dealers" class="ride-btn" (click)="closeMenu()">Book Ride</a>
+    </div>
+  </div>
+</header>

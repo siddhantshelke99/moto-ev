@@ -1,0 +1,17 @@
+<section class="page-wrap">
+  <div class="dealer-hero">
+    <p>Retail + Experience</p>
+    <h1>Find A VoltRide Store</h1>
+    <span>Book a test ride and experience instant electric torque first-hand.</span>
+  </div>
+
+  <app-dealer-section [dealers]="dealers"></app-dealer-section>
+
+  <form class="booking-form" [formGroup]="form" (ngSubmit)="submit()">
+    <h3>Book Test Ride</h3>
+    <input type="text" formControlName="name" placeholder="Your full name" />
+    <input type="text" formControlName="city" placeholder="Preferred city" />
+    <input type="date" formControlName="date" />
+    <button type="submit">Reserve Test Ride</button>
+  </form>
+</section>

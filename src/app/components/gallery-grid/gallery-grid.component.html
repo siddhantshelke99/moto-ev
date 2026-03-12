@@ -1,0 +1,11 @@
+<section class="gallery-grid">
+  @for (item of items; track item.image + item.title; let idx = $index) {
+    <button class="tile" type="button" appScrollReveal (click)="preview.emit(item)" [style.animationDelay.ms]="idx * 60">
+      <img [src]="item.image" [alt]="item.title" />
+      <div class="overlay">
+        <span class="tag">{{ item.tag }}</span>
+        <h3>{{ item.title }}</h3>
+      </div>
+    </button>
+  }
+</section>

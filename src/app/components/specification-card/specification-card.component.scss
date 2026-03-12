@@ -1,0 +1,19 @@
+.spec-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+}
+
+p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h4 {
+  margin-top: 0.52rem;
+  font-size: 1.2rem;
+}

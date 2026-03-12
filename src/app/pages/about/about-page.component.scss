@@ -1,0 +1,41 @@
+.about-wrap,
+.about-grid,
+.team-grid {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+.about-wrap {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+}
+
+.about-grid,
+.team-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.about-grid article,
+.team-grid article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+  padding: 1rem;
+}
+
+.team-grid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  margin-bottom: 0.7rem;
+}
+
+p {
+  color: var(--text-soft);
+}

@@ -1,0 +1,22 @@
+.stat-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+  padding: 1.15rem;
+  min-height: 140px;
+  display: grid;
+  align-content: center;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+p {
+  margin-top: 0.65rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+}

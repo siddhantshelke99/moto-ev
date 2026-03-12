@@ -1,0 +1,51 @@
+<section class="hero" @heroReveal>
+  <div class="copy">
+    <div class="top-row">
+      <p class="eyebrow">MOVE SMARTER</p>
+      <span class="badge">2026 Edition</span>
+    </div>
+
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+
+    <div class="quick-specs">
+      <div>
+        <strong>181 km</strong>
+        <span>IDC range</span>
+      </div>
+      <div>
+        <strong>3.0 sec</strong>
+        <span>0-40 km/h</span>
+      </div>
+      <div>
+        <strong>9 Modes</strong>
+        <span>Ride profiles</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a routerLink="/scooters" class="btn btn-primary">Explore Scooters</a>
+      <a routerLink="/dealers" class="btn btn-secondary">Book Test Ride</a>
+    </div>
+
+    <div class="trust-strip">
+      <span>Fast Charging Network</span>
+      <span>Connected App Control</span>
+      <span>OTA Software Updates</span>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img [src]="heroImage" [alt]="heroAlt" />
+
+    <div class="floating-card top">
+      <p>Top Speed</p>
+      <strong>95 km/h</strong>
+    </div>
+
+    <div class="floating-card bottom">
+      <p>Battery Health</p>
+      <strong>98%</strong>
+    </div>
+  </div>
+</section>

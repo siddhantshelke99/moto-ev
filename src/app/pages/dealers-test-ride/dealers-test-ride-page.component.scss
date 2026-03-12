@@ -1,0 +1,58 @@
+.page-wrap {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.dealer-hero {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+}
+
+.dealer-hero p {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+.dealer-hero span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-soft);
+}
+
+.booking-form {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 0.75rem;
+}
+
+button {
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #101302;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}

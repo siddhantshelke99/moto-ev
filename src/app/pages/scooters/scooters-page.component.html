@@ -1,0 +1,36 @@
+<section class="page-wrap">
+  <div class="page-hero" @heroEnter>
+    <div class="hero-copy">
+      <p>Product Range</p>
+      <h1>VoltRide Scooter Lineup</h1>
+      <span>From daily urban rides to long-range touring, engineered for every route.</span>
+
+      <div class="hero-chips">
+        <span>Fast Charge</span>
+        <span>Connected App</span>
+        <span>Regenerative Braking</span>
+      </div>
+
+      <div class="hero-actions">
+        <a routerLink="/dealers" class="primary">Book Test Ride</a>
+        <a routerLink="/technology" class="secondary">Explore Technology</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="https://cdn.bikedekho.com/processedimages/tvs/iqube-electric/source/iqube-electric690f0c38d0665.jpg" alt="Scooter showcase" />
+      <div class="hero-float">
+        <p>Lineup Highlight</p>
+        <strong>4 Models</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" @cardsEnter>
+    @for (scooter of scooters; track scooter.id) {
+      <div class="card-shell">
+        <app-scooter-card [scooter]="scooter"></app-scooter-card>
+      </div>
+    }
+  </div>
+</section>

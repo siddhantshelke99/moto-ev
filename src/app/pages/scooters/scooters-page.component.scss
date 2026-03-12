@@ -1,0 +1,139 @@
+.page-wrap {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 1.2rem 1.2rem 2rem;
+}
+
+.page-hero {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  margin-bottom: 1.3rem;
+  background: color-mix(in srgb, var(--surface) 93%, transparent);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.hero-copy {
+  padding: 0.4rem;
+}
+
+.hero-copy p {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+.hero-copy h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.hero-copy > span {
+  margin-top: 0.55rem;
+  display: block;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.hero-chips {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-chips span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.34rem 0.68rem;
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions a {
+  border-radius: 999px;
+  padding: 0.58rem 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.74rem;
+}
+
+.hero-actions .primary {
+  border: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #101302;
+  font-weight: 700;
+}
+
+.hero-actions .secondary {
+  border: 1px solid var(--line);
+}
+
+.hero-media {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-float {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  background: rgba(5, 9, 20, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.hero-float p {
+  margin: 0;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #dde6f2;
+}
+
+.hero-float strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: #ffffff;
+}
+
+.grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card-shell {
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+  }
+}

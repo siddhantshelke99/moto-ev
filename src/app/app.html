@@ -1,0 +1,9 @@
+<div class="app-shell" [class.theme-dark]="themeService.isDark()" [class.theme-light]="!themeService.isDark()">
+  <app-navbar [isDark]="themeService.isDark()" (themeToggle)="toggleTheme()"></app-navbar>
+  <main class="app-content">
+    <div class="route-shell" [@routeAnimations]="getRouteAnimationData(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</div>
