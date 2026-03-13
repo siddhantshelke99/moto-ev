@@ -9,9 +9,17 @@
 
   <form class="booking-form" [formGroup]="form" (ngSubmit)="submit()">
     <h3>Book Test Ride</h3>
+
     <input type="text" formControlName="name" placeholder="Your full name" />
     <input type="text" formControlName="city" placeholder="Preferred city" />
     <input type="date" formControlName="date" />
-    <button type="submit">Reserve Test Ride</button>
+
+    @if (statusMessage()) {
+    <p class="status-info">{{ statusMessage() }}</p>
+    }
+
+    <button type="submit" [disabled]="isSubmitting()">
+      {{ isSubmitting() ? 'Reserving...' : 'Reserve Test Ride' }}
+    </button>
   </form>
 </section>

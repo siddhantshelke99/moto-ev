@@ -11,6 +11,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class ContactFormComponent {
   private readonly fb = inject(FormBuilder);
   private readonly http = inject(HttpClient);
+  private readonly WEB3FORMS_ACCESS_KEY = '8d114832-1f5c-47bc-9fa0-e2cc8b7b7991'; 
 
   readonly isSubmitting = signal(false);
   readonly status = signal<'idle' | 'success' | 'error'>('idle');
@@ -29,13 +30,19 @@ export class ContactFormComponent {
       this.status.set('error');
       this.statusMessage.set('Please fill all required fields before sending.');
       return;
-    }console.log(this.form.value,"test");
-    
+    }
 
     this.isSubmitting.set(true);
     this.status.set('idle');
 
-    this.http.post('/api/contact', this.form.getRawValue()).subscribe({
+    // Prepare the data with your Access Key
+    const formData = {
+      ...this.form.getRawValue(),
+      access_key: this.WEB3FORMS_ACCESS_KEY
+    };
+
+    // Use the Web3Forms public API endpoint
+    this.http.post('https://api.web3forms.com/submit', formData).subscribe({
       next: () => {
         this.isSubmitting.set(false);
         this.status.set('success');
@@ -45,14 +52,8 @@ export class ContactFormComponent {
       error: (error: HttpErrorResponse) => {
         this.isSubmitting.set(false);
         this.status.set('error');
-
-        if (error.status === 0 || error.status === 404) {
-          this.statusMessage.set('Contact API is not reachable. Run the SSR server to enable /api/contact.');
-          return;
-        }
-
-        const message = (error.error?.error as string) || 'Unable to send right now. Please try again.';
-        this.statusMessage.set(message);
+        this.statusMessage.set('Something went wrong. Please try again later.');
+        console.error('Submission Error:', error);
       }
     });
   }
